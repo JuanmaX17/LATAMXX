@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card car-body bg-dark p-4 text-white rounded-0">
+                <h1>Update a Task</h1>
+                <form id="form-edit" data-id="{{task._id}}">
+                    <div class="mb-3">
+                        <input type="text" name="title" value="{{task.title}}" class="form-control rounded-0 bg-dark text-white">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="description" class="form-control rounded-0 bg-dark text-white">{{task.description}} </textarea>
+                    </div>
+                    <button id="btn-edit" type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    const form_edit = document.querySelector("#form-edit");
+        console.log("id",form_edit.dataset.id); 
+        const id = form_edit.dataset.id;
+    form_edit.addEventListener("submit",async(e)=>{
+        e.preventDefault();
+
+        const title = form_edit.elements["title"].value
+        const description = form_edit.elements["description"].value
+        try{
+            const data = await fetch(`/task/${id}/edit`,{
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json"},
+                    body: JSON.stringify({title,description})
+                })
+
+                const res = await data.json()
+                if(res.estado){
+                    window.location.href = '/';
+                }else{
+                    console.log("error")
+                }
+            
+        }catch(e){
+            console.log(e)
+        }
+    })
+</script>
+
