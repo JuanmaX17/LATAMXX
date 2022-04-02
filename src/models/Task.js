@@ -1,19 +1,29 @@
 import {Schema,model} from "mongoose"
 
 const taskSchema = new Schema({
-    title: {
+    nombre: {//title
         type: "string",
-        required: true,
-        unique: true,
-        trim: true
+
+
     },
-    description: {
+    apellidos: {//descripcion
         type: String,
-        unique: true,
+   
     },
-    done: {
-        type: Boolean,
-        default: false
+    email: {
+        type: String,
+        require: true, 
+        unique: true
+        
+    },
+    telefono: {
+        type: String,
+
+        
+    },
+     password: {
+        type: String,
+
     }
 },{
     timestamps: true,

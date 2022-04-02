@@ -1,21 +1,125 @@
 import modelo from "../models/Task"
+import crypto from "crypto";
 
-export const renderTasks = async(req,res)=>{
+export const inicio = async(req,res)=>{
     const tasks = await modelo.find().lean();
-    res.render("index",{tasks: tasks});
+    var sesion = req.session.login;
+    var nombre = req.session.nombre; 
+     console.log(sesion,nombre);
+    res.render("inicio",{sesion,nombre});
+
 }
 
-export const createTask = async(req,res)=>{
+
+/* Curso de diseño al cliente */
+export const curso = (req, res)=>{
+    res.render("designClient");
+}
+
+/* formulario de registro */
+export const registroGet = (req,res)=>{
+    res.render("registro");
+}
+/* captar datos del formulario de registro */
+ export const registroPost = async(req,res)=>{
     try{
         const task = modelo(req.body);
-        const taskSave = await task.save();
         console.log(task)
-        res.redirect("/");
+        var mykey = crypto.createCipher('aes-128-cbc', task.password);
+        var mystr = mykey.update('abc', 'utf8', 'hex')
+        mystr += mykey.final('hex');
+        console.log(mystr);
+        task.password = mystr;
+        const taskSave = await task.save();
+        res.render("login");
     }catch(e){
         console.log("error",e)
     }
 }
 
+/* formulario de login */
+export const loginVista = (req,res)=>{
+    res.render("login");
+}
+
+/* Logout */
+export const logout = (req,res)=>{
+    delete req.session.login;
+    delete req.session.nombre;
+    res.redirect("/");
+}
+/* captar formulario de login e iniciar sesion */
+export const login = async(req,res)=>{
+    
+    try{
+        const task = modelo(req.body);
+        console.log(task)
+        const email = await modelo.findOne({email: task.email});
+        const contraseña = await modelo.findOne({password: task.password});
+        if(email != null && contraseña != null){
+            console.log("inicio sesion");
+            console.log(req.session);
+            req.session.login = true;
+            req.session.nombre = email.nombre;
+            var sesion = req.session.login;
+            var nombre = req.session.nombre; 
+            res.render("inicio",{sesion,nombre});
+   
+        }else{
+            console.log("contra o pass incorrectos");
+            var sesion = false;
+
+            res.render("login",{message: "el usuario no existe",sesion});
+        }
+
+        
+    }catch(e){
+        console.log("error",e)
+    }
+}
+
+
+export const categorias = (req, res)=>{
+    var sesion = req.session.login;
+    var nombre = req.session.nombre; 
+     console.log(sesion,nombre);
+    res.render("categorias",{sesion,nombre});
+}
+
+
+
+/* viaje en linea */
+export const viajeEnLinea = (req, res)=>{
+    res.render("viajeEnLinea");
+}
+
+
+/* Prototipado productos */
+export const prototipadoProductos = (req, res)=>{
+    res.render("prototipadoProductos");
+}
+
+
+
+
+/* optimizacion de Productos  */
+export const optimizacionProductos = (req, res)=>{
+    res.render("optimizacionProductos");
+}
+
+/* pensamiento digital */
+export const pensamientoDigital = (req, res)=>{
+    res.render("pensamientoDigital");
+}
+
+
+
+/* habilidades */
+export const habilidades = (req, res)=>{
+    res.render("habilidades");
+}
+
+/* 
 export const editTask = async(req,res)=>{
     const id = req.params.id;
     try{
@@ -78,4 +182,4 @@ export const toggleTask = async(req, res)=>{
 
     await task.save()
     res.redirect("/");
-}
+}  */

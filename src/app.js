@@ -4,6 +4,11 @@ import {create} from "express-handlebars";
 import path from "path"
 import morgan from "morgan";
 import bodyparser from "body-parser"; 
+import session from "express-session";
+import crypto from "crypto";
+
+
+
 
 const app = express();
 
@@ -25,11 +30,20 @@ app.set("view engine",".hbs")
 app.use(morgan("dev"));
 app.use(express.urlencoded({extended: false}));
 
+
+app.use(session({
+    saveUninitialized: false,
+    resave: false,
+    secret: "el secreto"
+}));
+
 //Routes
 app.use(indexRoutes);
 
 //static files
 app.use(express.static(path.join(__dirname, "public")));
+
+
 
 export default app;
 

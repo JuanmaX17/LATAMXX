@@ -1,17 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-    {{>navbar}}
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dashboard - SB Admin</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../../css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="../../css/cssCliente.css" rel="stylesheet">
+        
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="/">LatinoamericaX</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+           <div class="img-menu-container">
+               <img src="../../img/startup.png" class="img-menu">
+           </div>
+            <!-- Navbar-->
+             {{#if sesion}}
+             <ul class="ul-login">
+                        <li><a class="login-a" href="/categorias">Categorias</a>
+                        </ul>
+                         <li><p class="name-login">{{nombre}}</p></li>
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    
+                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                      
+                    </ul>
+                    
+               
+              
+                    
+                    
+                    {{else}}
+                        <ul class="ul-login">
+                        <li><a class="login-a" href="/login">Login</a>
+                        </ul>
+                         <ul class="ul-login">
+                        <li><a class="login-a" href="/registro">Registro</a>
+                        </ul>
+                        <ul class="ul-login">
+                        <li><a class="login-a" href="/categorias">Categorias</a>
+                        </ul>
+        
+                        
+                    {{/if}}
+                   
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Contenidos</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Tutoriales
+                            </a>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Eventos
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Bootcamps</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Hackathons</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Tours 4.0</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Cursos
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" id="pregrado" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Pregrado
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="/designClient">Diseño basado en el cliente</a>
+                                            <a class="nav-link" href="/prototipadoProductos">Prototipado de productos </a>
+                                            <a class="nav-link" href="/optimizacionProductos">Optimización de productos</a>
+                                            <a class="nav-link" href="/viajeEnLinea">Empezando tu viaje en línea</a>
+                                            <a class="nav-link" href="/pensamientoDigital">Pensamiento crítico digital</a>
+                                            <a class="nav-link" href="password.html">Aprendizaje del futuro</a>
+                                             <a class="nav-link" href="/habilidades">Habilidades de estudio</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Empresas
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Eventos</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Bootcamps
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Hackathons
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tours 4.0
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        {{nombre}}
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+      
+<!-- el Modal -->
+<div id="myModal" class="modal">
+
+  <!-- contenido del modal -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="view-modal container align-self-center p-6 register-cont">
+        <h1 class="font-weight-bold mb-3">Solicitar beca</h1>
+       
+        <p class="text-muted mb-5">Ingresa la siguiente información para solicitar tu beca.</p>
+
+        <form class="registro" >
+            <div class="form-group ">
+                <div class="form-group mb-2">
+                    <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold mb-2">Apellidos <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" placeholder="Tus apellidos">
+                </div>
+            </div>
+            <div class="form-group ">
+                <label class="font-weight-bold mb-2">Correo electrónico <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" placeholder="Ingresa tu correo electrónico">
+                
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="font-weight-bold mb-2">Telefono <span class="text-danger">*</span></label>
+                <input class="form-control" placeholder="Ingresa tu telefono">
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="exampleFormControlTextarea1 ">¿Por que quiero aplicar a la beca?</label>
+                <textarea class="form-control textarea-beca" onKeyUp="maximo(this,255);" onKeyDown="maximo(this,255);"> </textarea> 
+              </div>
+
+            <div class="form-group mb-3">
+                <label class="font-weight-bold">Fecha de nacimiento <span class="text-danger">*</span></label>
+                <input type="date" class="date-beca">
+            </div>
     
-    
-    {{{body}}}
-</body>
+            
+
+            <div class="form-group mb-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label text-muted">Al seleccionar esta casilla aceptas nuestro aviso de privacidad y los términos y condiciones</label>
+                </div>
+            </div>
+            <button class="btn btn-primary width-100">Regístrate</button>
+        </form>
+        <small class="d-inline-block text-muted mt-5 derechos">Todos los derechos reservados | © 2022 Latinoamerica X</small>
+    </div>
+  </div>
+
+</div>
+
+                {{{body}}}
+        
+                
+
+
+               
+            </div>
+        </div>
+            <script src="../../js/moda.js"></script>
+        <script>
+            function maximo(campo,limite){
+            if(campo.value.length>=limite){
+            campo.value=campo.value.substring(0,limite);
+            alert("maximo de caracteres permitidos");
+             }
+            }
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
 </html>
