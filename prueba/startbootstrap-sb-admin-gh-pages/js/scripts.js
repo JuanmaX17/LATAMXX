@@ -27,10 +27,3 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 
-var equis = document.getElementById("close-success");
-var mensaje = document.getElementById("mensaje-alert");
-
-equis.onclick = function() {
-
-    mensaje.style.display = "none";
-}

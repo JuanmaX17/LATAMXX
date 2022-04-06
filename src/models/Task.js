@@ -1,6 +1,6 @@
 import {Schema,model} from "mongoose"
 
-const taskSchema = new Schema({
+const registroSchema = new Schema({
     nombre: {//title
         type: "string",
 
@@ -30,4 +30,20 @@ const taskSchema = new Schema({
     versionKey: false,
 })
 
-export default model("task",taskSchema);
+
+const solicitudesBeca = new Schema({
+    nombre: String,
+    apellidos: String,
+    email: String,
+    telefono: String,
+    razon: String,
+    nacimiento: Date,
+    curso: String
+
+},{
+    timestamps: true,
+    versionKey: false
+}) 
+
+export const modeloUser = model("task",registroSchema);
+export const modeloBecas = model("solicitudesBecas",solicitudesBeca);

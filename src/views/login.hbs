@@ -13,7 +13,7 @@
         <link href="../../css/cssCliente.css" rel="stylesheet">
         
     </head>
-<form action="/login" method="post" id="login">
+<form action='login' method="post" id="login">
         <h3 class="text-center text-white pt-5">Login form</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center login-box">
@@ -37,11 +37,11 @@
                                 <a href="/" class="text-info">¿Olvidaste tu contraseña?</a>
                             </div>
                             
-                            {{#if sesion}}
+                            {{#if session}}
 
                             {{else}}
                                  <div style="margin-top: 29px;">
-                                <p style="color: red;">{{message}}</p>
+                                <p style="color: red;">{{messageUser}}</p>
                                  </div>
                             {{/if}}
                            

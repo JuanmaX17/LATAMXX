@@ -8,13 +8,20 @@ import {
     login,
     loginVista,
     curso,
-    categorias,
     logout,
     viajeEnLinea,
     prototipadoProductos,
     optimizacionProductos,
     pensamientoDigital,
-    habilidades
+    habilidades,
+    bootcamps,
+    hackathons,
+    tours,
+    beca,
+    cursosHomologablesPersonas,
+    cursosNoHomologablesPersonas,
+    cursosHomologablesEmpresas,
+    cursosNoHomologablesEmpresas
     
     
 /*     editTask,
@@ -34,7 +41,7 @@ router.get("/registro",registroGet)
 
 router.post("/registro",registroPost)
 
-router.get("/categorias",categorias);
+
 
 router.get("/login",loginVista)
 router.post("/login",login)
@@ -48,6 +55,23 @@ router.get("/optimizacionProductos",optimizacionProductos);
 router.get("/pensamientoDigital",pensamientoDigital);
 
 router.get("/habilidades",habilidades);
+
+router.get("/bootcamps",bootcamps)
+
+router.get("/hackathons",hackathons)
+
+router.get("/tours",tours)
+
+router.post("/beca",beca)
+
+router.get("/cursosHomologablesPersonas",cursosHomologablesPersonas)
+
+router.get("/cursosNoHomologablesPersonas",cursosNoHomologablesPersonas)
+
+router.get("/cursosHomologablesEmpresas",cursosHomologablesEmpresas)
+
+router.get("/cursosNoHomologablesEmpresas",cursosNoHomologablesEmpresas)
+
 /* 
 router.get("/task/:id/edit",editTask)
 
