@@ -6,10 +6,10 @@ import bcryptjs from "bcryptjs";
 
 export const inicio = async(req,res)=>{
     const tasks = await modeloUser.find().lean();
-    var sesion = req.session.login;
+    var session = req.session.login;
     var nombre = req.session.nombre; 
-     console.log(sesion,nombre);
-    res.render("index",{sesion,nombre});
+
+    res.render("index",{session,nombre});
 
 }
 
@@ -18,7 +18,7 @@ export const inicio = async(req,res)=>{
 export const curso = (req, res)=>{
     var session = req.session.login;
     var nombre = req.session.nombre; 
-    res.render("designClient",{session,nombre});
+    res.render("designClient",{session,nombre,curso: "Diseño basado en el cliente"});
 }
 
 /* formulario de registro */
@@ -74,7 +74,10 @@ export const login = async(req,res)=>{
             req.session.nombre = objectDb[0].nombre;
             var session = req.session.login;
             var nombre = req.session.nombre; 
-            res.render("index",{session,nombre,id: task._id,message: "Inicio de session exitoso"});
+            var mensajeBienvenida = true
+            var nombre = req.session.nombre; 
+            res.render("index",{session,nombre,id: task._id,message: "Bienvenido ",mensajeBienvenida});
+            
 
    
         }else{
@@ -157,7 +160,7 @@ export const hackathons = (req,res)=>{
 export const tours = (req,res)=>{
     var session = req.session.login;
     var nombre = req.session.nombre;
-    res.render("tours",session,nombre);
+    res.render("tours",{session,nombre});
 }
 
 /* Beca modal */
@@ -192,7 +195,7 @@ export const cursosNoHomologablesPersonas = async(req,res)=>{
 export const cursosHomologablesEmpresas = async(req,res)=>{
     var session = req.session.login;
     var nombre = req.session.nombre;
-    res.render("cursosNoHomologablesEmpresas",{session,nombre});
+    res.render("cursosHomologablesEmpresas",{session,nombre});
 }
 
 export const cursosNoHomologablesEmpresas = async(req,res)=>{
@@ -200,6 +203,11 @@ export const cursosNoHomologablesEmpresas = async(req,res)=>{
     var nombre = req.session.nombre;
 
     res.render("cursosNoHomologablesEmpresas",{session,nombre});
+}
+
+export const tutoriales = (req,res)=>{
+
+    res.render("tutoriales");
 }
 
 

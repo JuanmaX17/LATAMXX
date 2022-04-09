@@ -1,19 +1,41 @@
+<header class="bg-primary py-5 head">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center my-5">
+                            <h1 class="display-5 fw-bolder text-white mb-2">CURSO DE DISEÑO AL CLIENTE</h1>
+                            <p class="lead text-white-50 mb-4">La mejor inversion es en ti mismo</p>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Comenzar!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
 <div class="container px-4 px-lg-5">
                     <!-- Heading Row-->
                     <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+                        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../img/DiseñoCliente.jpg" alt="..." /></div>
                         <div class="col-lg-5">
-                            <h1 class="font-weight-light-cursos">Prototipado de productos</h1>
+                            <h1 class="font-weight-light-cursos">Diseño basado cliente</h1>
                             <p>¿Preocupado por la viabilidad técnica de tu producto o servcio? No hay problema, prototipa rápidamente con las últimas tecnologiaas y herramientas de escnaeo, diseño, e impresión 3D; electrónica y robótica: contenidos digitales, aplicaciones big data e inteligencia artificial, entre otros. </p>
                             <a id="myBtn"  class="btn btn-primary">Solicitar Beca</a>
-                            <a class="btn btn-primary" href="https://studio.edunext.co/course/course-v1:colombiaX+DBC-01+2021-2">Ir al Curso!</a>
+                           <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-rocket"></i>Compralo ahora
+</button>
                         </div>
                     </div>
                     <!-- Call to Action-->
+
+                    {{#if session}}
                     <div class="card text-white bg-secondary my-5 py-4 text-center">
-                        <div class="card-body"><p class="text-white m-0">La certificacion es brindada por EduNext</p><br><a class="btn btn-primary btn-sm" href="#!">Descargar Pdf de muestra</a></div>
+                        <div class="card-body"><p class="text-white m-0">La certificacion es brindada por EduNext</p><br><a class="btn btn-primary btn-sm" href="../certificados/certificadoEjemplo.pdf" download="Certificado ejemplo">Descargar Pdf de muestra</a></div>
                         
                     </div>
+                    {{/if}}
                     <!-- Content Row-->
                     <div class="row gx-4 gx-lg-5">
                         <div class="col-md-4 mb-5">
@@ -29,7 +51,7 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h2 class="card-title-cursos">Instructores</h2><br>
-                                    <div class="container-img" ><img src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt=""></div>
+                                    <div class="container-img" ><img src="https://www.cuerpomente.com/medio/2019/07/03/relaja-tu-cara-cuadrada_cfa0022f_846x846.jpg" alt=""></div>
                                     <p class="card-text-cursos p-instructor">
                                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam sed pariatur quis, hic atque ratione tenetur alias doloremque perspiciatis fugit?
                                     </p>
@@ -49,19 +71,9 @@
                     </div>
                 </div>
         
+
+
+        
                 
 
-
-                <footer class="py-4 bg-light mt-auto footer-lan">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
+            

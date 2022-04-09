@@ -22,7 +22,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-          <link href="../../css/inicio.css" rel="stylesheet" />
+        <link href="../../css/inicio.css" rel="stylesheet" />
         
     </head>
     <body class="sb-nav-fixed">
@@ -30,15 +30,16 @@
       
             <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="/">LatinoamericaX</a>
+            <a class="navbar-brand ps-3 padre-logo" href="/"><img class="logo-latam" src="https://www.latinoamericax.org/wp-content/uploads/2020/09/logo-latinoamericax.png"></a>
             <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <button class="btn sinSombra" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
            <div class="img-menu-container">
                <img src="../../img/startup.png" class="img-menu">
            </div>
             <!-- Navbar-->
              {{#if session}}
+
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -55,7 +56,7 @@
                     
                
               
-                    
+              
                     
                     {{else}}
                         <ul class="ul-login">
@@ -66,6 +67,14 @@
                         </ul>
                         
                     {{/if}}
+
+
+                {{#if mensajeBienvenida}}
+                        <div class="alert alert-success alert-dismissable exito-db animation-slide" id="mensaje-alert">
+                            <span type="text" class="close m-exito" data-dismiss="alert" id="close-success">&times;</span>
+                            <strong>{{message}} {{nombre}}</strong>
+                        </div>
+                {{/if}}
                    
                 </li>
             </ul>
@@ -75,8 +84,14 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
+                          <div  class="inicio-menu" >
+                            <a href="/">
+                            <img src="https://www.pngplay.com/wp-content/uploads/7/Home-Logo-Background-PNG-Image.png">
+                            <p>INICIO</p>
+                            </a>
+                          </div>
                             <div class="sb-sidenav-menu-heading">Cursos</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="/tutoriales">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Tutoriales
                             </a>
@@ -127,17 +142,152 @@
             <div id="layoutSidenav_content">
       
 <!-- el Modal -->
-
-
-                {{{body}}}
-        
-            
-
 {{!-- modal --}}
 <!-- Trigger the modal with a button -->
 
 <!-- Modal -->
 <!-- Button trigger modal -->
+
+
+
+
+
+
+
+
+
+
+                {{{body}}}
+        
+          
+
+
+
+
+{{!-- FOOTER --}}
+<footer class="text-center text-white bottom-footer" style="background-color: black;">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Images -->
+    <section class="">
+      <div class="row">
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0 logos-center">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          >
+            <img
+              src="https://www.latinoamericax.org/wp-content/uploads/2020/06/asublanco.png"
+              class="w-100"
+            />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.2);"
+              ></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0 logos-center">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          >
+            <img
+              src="https://www.latinoamericax.org/wp-content/uploads/2020/06/ibserblanco-1024x587.png"
+              class="w-100"
+            />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.2);"
+              ></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0 logos-center">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          >
+            <img
+              src="https://www.latinoamericax.org/wp-content/uploads/2020/06/effective.png"
+              class="w-100"
+            />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.2);"
+              ></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0 logos-center">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          >
+            <img
+              src="https://www.latinoamericax.org/wp-content/uploads/2020/06/makersblanco-1024x478.png  "
+              class="w-100"
+            />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.2);"
+              ></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0 logos-center">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          >
+            <img
+              src="https://www.latinoamericax.org/wp-content/uploads/2020/06/gesx-05.png"
+              class="w-100"
+            />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.2);"
+              ></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0 logos-center">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          >
+            <img
+              src="https://www.latinoamericax.org/wp-content/uploads/2020/06/LatinoamericaX.png"
+              class="w-100"
+            />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.2);"
+              ></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Images -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://www.latinoamericax.org/">LatinoamericaX</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+
 
 
 <!-- Modal -->
@@ -163,20 +313,20 @@
         
 
             <div>
-                    <label for="nombre-beca" class="label-beca">Apellidos <span class="red">*</span></label>
-                    <input type="text" id="nombre-beca" name="apellidos" class="input-beca" required>
+                    <label for="apellidos-beca" class="label-beca">Apellidos <span class="red">*</span></label>
+                    <input type="text" id="apellidos-beca" name="apellidos" class="input-beca" required>
             </div>
             <div>
-                    <label for="nombre-beca" class="label-beca">Telefono <span class="red">*</span></label>
-                    <input type="text" id="nombre-beca" name="telefono" class="input-beca" required>
+                    <label for="telefono-beca" class="label-beca">Telefono <span class="red">*</span></label>
+                    <input type="text" id="telefono-beca" name="telefono" class="input-beca" required>
             </div>
             <div>
-                    <label for="nombre-beca" class="label-beca">Email <span class="red">*</span></label>
-                    <input type="email" id="nombre-beca" name="email" class="input-beca" required>
+                    <label for="email-beca" class="label-beca">Email <span class="red">*</span></label>
+                    <input type="email" id="email-beca" name="email" class="input-beca" required>
             </div>
             <div>
-                    <label for="nombre-beca" class="label-beca">Fecha de nacimiento <span class="red">*</span></label>
-                    <input type="date" id="nombre-beca" name="nacimiento" class="input-beca" required>
+                    <label for="nacimiento-beca" class="label-beca">Fecha de nacimiento <span class="red">*</span></label>
+                    <input type="date" id="nacimiento-beca" name="nacimiento" class="input-beca" required>
             </div>
             
             </div>
@@ -184,8 +334,8 @@
             <div class="text-beca">
                 
                 <div class="text-beca-content">
-                    <label for="nombre-beca" class="label-beca">¿Por que deberias becarte?</label>
-                    <textarea id="nombre" name="razon"></textarea>
+                    <label for="razon-beca" class="label-beca">¿Por que deberias becarte?</label>
+                    <textarea id="razon-beca" name="razon"></textarea>
                 </div>
 
             </textarea>
@@ -220,7 +370,59 @@
   <strong>{{message}}</strong>
 </div>
 {{/if}}
-        
+
+
+
+
+<!-- MODAL DE PAGOS -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-body">
+                <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
+                <div class="tabs mt-3">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation"> <a class="nav-link active" id="visa-tab" data-toggle="tab" href="#visa" role="tab" aria-controls="visa" aria-selected="true"> <img src="https://i.imgur.com/sB4jftM.png" width="80"> </a> </li>
+                        <li class="nav-item" role="presentation"> <a class="nav-link" id="paypal-tab" data-toggle="tab" href="#paypal" role="tab" aria-controls="paypal" aria-selected="false"> <img src="https://i.imgur.com/yK7EDD1.png" width="80"> </a> </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="visa" role="tabpanel" aria-labelledby="visa-tab">
+                            <div class="mt-4 mx-4">
+                                <div class="text-center">
+                                    <h5>Credit card</h5>
+                                </div>
+                                <div class="form mt-3">
+                                    <div class="inputbox"> <input type="text" name="name" class="form-control font-modal" required="required"> <span>Cardholder Name</span> </div>
+                                    <div class="inputbox"> <input type="text" name="name" min="1" max="999" class="form-control font-modal" required="required"> <span>Card Number</span> <i class="fa fa-eye"></i> </div>
+                                    <div class="d-flex flex-row">
+                                        <div class="inputbox"> <input type="text" name="name" min="1" max="999" class="form-control font-modal" required="required"> <span>Expiration Date</span> </div>
+                                        <div class="inputbox"> <input type="text" name="name" min="1" max="999" class="form-control font-modal" required="required"> <span>CVV</span> </div>
+                                    </div>
+                                    <div class="px-5 pay"> <button class="btn btn-success btn-block">Add card</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="paypal" role="tabpanel" aria-labelledby="paypal-tab">
+                            <div class="px-5 mt-5">
+                                <div class="inputbox"> <input type="text" name="name" class="form-control font-modal" required="required"> <span>Paypal Email Address</span> </div>
+                                <div class="pay px-5"> <button class="btn btn-primary btn-block">Add paypal</button> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+
+
+
+
+
+
+
         <script>
             function maximo(campo,limite){
             if(campo.value.length>=limite){
@@ -232,9 +434,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../../js/scripts.js"></script>
         <script src="../../js/modal.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
         
     </body>
 </html>

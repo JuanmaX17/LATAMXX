@@ -11,7 +11,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
  html{
-   width: 100vw;
+   width: 100vw !important;
  }
 :root {
   --bs-blue: #0d6efd;
@@ -66,6 +66,35 @@
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
 }
+
+
+body::-webkit-scrollbar{
+  z-index: 100000000;
+  width: 12px;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: #80c1ce;
+  border-radius: 10px;
+
+}
+
+@media (max-width: 650px){
+  body::-webkit-scrollbar{
+    z-index: 0;
+    display: none;
+  }
+  body::-webkit-scrollbar-thumb{
+    z-index: 0;
+    display: none;
+  
+  }
+
+}
+
+
+
+
+
 
 *,
 *::before,
@@ -3863,8 +3892,26 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .btn.active {
   z-index: 1;
+  
 }
+.sinSombra:focus{
 
+box-shadow: none !important;
+border-radius:0px !important;
+ 
+}
+.sinSombra{
+  margin-left: 4px !important;
+ 
+
+}
+.sinSombra:active{
+
+  border-bottom: 2px solid #0089E0;
+
+
+   
+  }
 .btn-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -5489,6 +5536,7 @@ textarea.form-control-lg {
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
+
 }
 
 .modal-dialog {
@@ -5543,7 +5591,7 @@ textarea.form-control-lg {
   outline: 0;
 }
 
-.modal-backdrop {
+/* .modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -5551,7 +5599,7 @@ textarea.form-control-lg {
   width: 100vw;
   height: 100vh;
   background-color: #000;
-}
+} */
 .modal-backdrop.fade {
   opacity: 0;
 }
@@ -12357,12 +12405,14 @@ textarea.form-control-lg {
 .card-p a{
   text-decoration: none;
   color: #000080;
+  font-size: 1.6rem;
 
 }
 .card-main{
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 5px 0px 14px -1px rgba(0,0,0,0.5);
+  padding-bottom: 20px;
 }
 .p-info{
   margin: 20px;
@@ -13012,16 +13062,7 @@ textarea.form-control-lg {
  
 }
 
-.logo{
-  object-fit: cover;
-  height: 100px;
-  
-}
 
-.logo img{
-  object-fit: cover;
-  height: 100px;
-}
 
 .modal {
   display: none; /* Hidden by default */
@@ -13174,6 +13215,14 @@ textarea.form-control-lg {
    display: grid;
    grid-template-columns: 1fr 1fr;
  }
+
+@media (max-width: 460px){
+  .form-beca{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
  .text-beca{
    display: flex;
    justify-content:center;
@@ -13227,5 +13276,799 @@ textarea.form-control-lg {
   to {
     margin-right: 0;
 
+  }
+}
+
+
+/* --------------------------------------ESTILOS PREGRADO---------------------------------------- */
+
+/* /Card Diseño basado en el Cliente/ */
+
+.container-card-cursosP{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr) );
+  gap: 30px;
+}
+
+.curso-card-DiseñoCliente{
+  text-align: center;
+  background-image: url(../img/DiseñoCliente.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-DiseñoCliente{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-DiseñoCliente:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+/* /Card curso prototipado/ */
+.curso-card-prototipado{
+  text-align: center;
+  background-image: url(../img/PrototipadoProductos.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-prototipado{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-prototipado:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+/* /Card curso optimizacion/ */
+.curso-card-optimizacion{
+  text-align: center;
+  background-image: url(../img/OptimizacionProductos.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-optimizacion{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-optimizacion:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+/* /Card curso Aprendiz/ */
+.curso-card-aprendiz{
+  text-align: center;
+  background-image: url(../img/AprendizDigital.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-aprendiz{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-aprendiz:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+/* /Card curso Bases de administracion/ */
+.curso-card-BasesAdmin{
+  text-align: center;
+  background-image: url(../img/Cloud.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-BasesAdmin{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-BasesAdmin:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+/* /Card curso Transformacion digital/ */
+.curso-card-Tdigital{
+  text-align: center;
+  background-image: url(../img/EmpresasTecnologicas.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-Tdigital{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-Tdigital:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+/* /Card curso Toma de decisiones basadas en datos/ */
+.curso-card-Tdatos{
+  text-align: center;
+  background-image: url(../img/DecisionesDatos.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-Tdatos{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-Tdatos:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+
+/* /Card curso 3D Scanning/ */
+.curso-card-3DScanning{
+  text-align: center;
+  background-image: url(../img/3dScanning.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-3DScanning{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-3DScanning:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+/* /Card curso Modelado/ */
+.curso-card-modelado{
+  text-align: center;
+  background-image: url(../img/Modelado.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-modelado{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-modelado:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+
+/* /Card curso Impresion3D/ */
+.curso-card-Impresion3D{
+  text-align: center;
+  background-image: url(../img/Impresion3D.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-Impresion3D{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-Impresion3D:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+/* 
+/Card curso Automatizacion/ */
+.curso-card-Automatizacion{
+  text-align: center;
+  background-image: url(../img/Automatizacion.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-Automatizacion{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-Automatizacion:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+/* 
+/Card curso Automatizacion/ */
+.curso-card-Aereo{
+  text-align: center;
+  background-image: url(../img/DiseñoAereo.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  background-size: cover;;
+  
+  
+}
+
+.curso-card-Aereo{
+  transition-duration: .6s;
+  clip-path: polygon(
+      50% 0,
+      100% 0,
+      100% 50%,
+      100% 100%,
+      50% 100%,
+      0 100%,
+      0 50%,
+      0 0
+  );
+}
+.curso-card-Aereo:hover{
+  clip-path: polygon(
+      50% 0,
+      50% 0,
+      100% 50%,
+      100% 50%,
+      50% 100%,
+      50% 100%,
+      0 50%,
+      0 50%
+  );
+  filter: brightness(0.5)
+ 
+}
+
+
+
+
+
+/* LOGO */
+
+
+.logo-latam{
+  width: 170px;
+  height: 80px;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.logo-latam:hover{
+  transform: scale(1.02);
+  
+}
+
+.padre-logo{
+  padding-top: 2vw;
+  filter: brightness(4);
+  transition: all 0.4s ease-in-out;
+}
+.padre-logo:hover{
+  filter: brightness(1);
+}
+
+
+
+
+
+/* Tutoriales */
+
+.tutorial{
+  padding-bottom: 12px !important;
+}
+.tutorial:hover{
+
+
+
+  background-color: rgb(0,0,0,0.1);
+  transform: scale(1.0.2);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  
+
+
+}
+.tutorial > a{
+  transition: all 0.6s;
+
+}
+.tutorial:hover > a{
+  
+  color: #0dcaf0;
+}
+
+
+/* FOOTER */
+
+.bg-image img{
+  max-width: 200px !important;
+}
+
+.logos-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 992px){
+
+  .bg-image img{
+    max-width: 150px !important;
+  }
+
+}
+
+@media (max-width: 500px){
+
+  .bg-image img{
+    max-width: 100px !important;
+  }
+
+}
+
+
+
+
+/* login */
+
+
+.page-login{
+  height: 70vh;
+
+}
+
+.input-login{
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #084298;
+}
+.input-login:focus{
+  border: none;
+  box-shadow: 0px 1px 5px #0089E0;
+
+  
+}
+
+
+
+
+
+/* MODAL DE PAGO */
+
+.launch {
+  height: 50px
+}
+
+.close {
+  font-size: 21px;
+  cursor: pointer
+}
+
+.modal-body {
+  height: 450px
+}
+
+.nav-tabs {
+  border: none !important
+}
+
+.nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: #fff;
+  border-color: #ffffff #ffffff #fff;
+  border-top: 3px solid blue !important
+}
+
+.nav-tabs .nav-link {
+  margin-bottom: -1px;
+  border: 1px solid transparent;
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+  border-top: 3px solid #eee;
+  font-size: 20px
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: #e9ecef #ffffff #ffffff
+}
+
+.nav-tabs {
+  display: table !important;
+  width: 100%
+}
+
+.nav-item {
+  display: table-cell
+}
+
+
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #8bbafe;
+  outline: 0;
+  box-shadow: none
+}
+
+.inputbox {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%
+}
+
+.inputbox span {
+  position: absolute;
+  top: 7px;
+  left: 11px;
+  transition: 0.5s
+}
+
+.inputbox i {
+  position: absolute;
+  top: 13px;
+  right: 8px;
+  transition: 0.5s;
+  color: #3F51B5
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0
+}
+
+.inputbox input:focus~span {
+  transform: translateX(-0px) translateY(-15px);
+  font-size: 12px
+}
+
+.inputbox input:valid~span {
+  transform: translateX(-0px) translateY(-15px);
+  font-size: 12px
+}
+
+.pay button {
+  height: 47px;
+  border-radius: 37px
+}
+
+
+.font-modal{
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+}
+
+
+
+.inicio-menu{
+  display: none;
+ 
+}
+
+.inicio-menu a{
+  text-decoration: none !important;
+}
+@media (max-width: 482px){
+  .inicio-menu{
+    display: block;
+    display: grid;
+    place-items: center;
+    transition: all 0.3s;
+
+  }
+  .inicio-menu a > img{
+    width: 20px;
+    
+  }
+  .inicio-menu a{
+    text-align: center;
+  }
+  .inicio-menu:hover{
+    color: #0dcaf0 !important;
+    
   }
 }

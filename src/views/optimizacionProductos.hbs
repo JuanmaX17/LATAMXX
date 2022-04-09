@@ -1,3 +1,29 @@
+<header class="bg-primary py-5 head">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center my-5">
+                            <h1 class="display-5 fw-bolder text-white mb-2">CURSO DE OPTIMIZACION DE PRODUCTOS</h1>
+                            <p class="lead text-white-50 mb-4">La mejor inversion es en ti mismo</p>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Comenzar!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+
+
+
+
+
+
+
+
 <div class="container px-4 px-lg-5">
                     <!-- Heading Row-->
                     <div class="row gx-4 gx-lg-5 align-items-center my-5">
@@ -10,10 +36,13 @@
                         </div>
                     </div>
                     <!-- Call to Action-->
-                    <div class="card text-white bg-secondary my-5 py-4 text-center">
-                        <div class="card-body"><p class="text-white m-0">La certificacion es brindada por EduNext</p><br><a class="btn btn-primary btn-sm" href="#!">Descargar Pdf de muestra</a></div>
+                    {{#if}}
+                     <div class="card text-white bg-secondary my-5 py-4 text-center">
+                        <div class="card-body"><p class="text-white m-0">La certificacion es brindada por EduNext</p><br><a class="btn btn-primary btn-sm" href="../certificados/certificadoEjemplo.pdf" download="Certificado ejemplo">Descargar Pdf de muestra</a></div>
                         
                     </div>
+
+                    {{/if}}
                     <!-- Content Row-->
                     <div class="row gx-4 gx-lg-5">
                         <div class="col-md-4 mb-5">
@@ -50,18 +79,3 @@
                 </div>
         
                 
-
-
-                <footer class="py-4 bg-light mt-auto footer-lan">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>

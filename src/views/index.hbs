@@ -17,14 +17,13 @@
             <div class="container-card">
 
             <div class="card-main" >
-                <div class="curso-card-bootcamp ">
+                <div class="curso-card-bootcamp">
                 
-                  
                 </div>
                     <h2 class="card-p"><a href="">PERSONAS</a></h2>
-                    <div>
+                    <div class="body-content-cursos">
                     <p class="p-info">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, voluptas!
+                        Cursos diseñados para impulsar el aprendizaje continuo en las personas
                     </p>
 
                     <a class="btn btn-primary" href="/cursosHomologablesPersonas">Homologables</a>
@@ -36,19 +35,18 @@
             <div class="card-main" >
                 <div class="curso-card-pregrado">
                 
-                  
                 </div>
-                    <h2 class="card-p"><a href="./pregados.html">EMPRESAS</a></h2>
+                    <h2 class="card-p"><a href="">EMPRESAS</a></h2>
+                    <div class="body-content-cursos">
                     <p class="p-info">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, voluptas!
+                        Cursos enfocados en empresas de todos los tamaño, en busca de mejora
                     </p>
                     <a class="btn btn-primary" href="/cursosHomologablesEmpresas">Homologables</a>
                     <a class="btn btn-primary" href="/cursosHomologablesEmpresas">No Homologables</a>
-                </div>
-                
 
-                      
+                </div>       
             </div>
+            
 
         </section>
 
@@ -65,7 +63,7 @@
                     <h2 class="card-p"> <a href="/bootcamps">BOOTCAMPS</a></h2>
                     <div>
                     <p class="p-info">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, voluptas!
+                        Metodologia intensiva enfocada a adquirir conocimientos practicos y especificos relacionados con el desarrollo de software
                     </p>
                     </div>
                     
@@ -78,7 +76,7 @@
                 </div>
                     <h2 class="card-p"><a href="hackathons">HACKATHONS</a></h2>
                     <p class="p-info">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, voluptas!
+                        Los hackatones son una excelente oportunidad para resolver retos importantes de las organizaciones, ya que se generan multitud de ideas que proponen soluciones.
                     </p>
                 </div>
                 
@@ -102,7 +100,7 @@
                     <h2 class="card-p"><a href="/tours">TOURS 4.0</a></h2>
                     <div>
                     <p class="p-info">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, voluptas!
+                        Son un producto que el IBSER diseño en el 2019 para que las personas y empresas conozcan los diferentes espacios y tecnologías de ideación y cocreación que existen en ellos
                     </p>
                     </div>
                     
@@ -132,7 +130,7 @@
               <div class="texto">
                 <h3>Raúl Gonzalez</h3>
                 <h4>Docente en Diseño Gráfico</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis.</p>
+                <p>Apasionado de la enseñanza ha trabajado por 5 años en una reconocida empresa de desarrollo de software a la medida</p>
               </div>
             </div>
 
@@ -143,7 +141,7 @@
               <div class="texto">
                 <h3>Paul Ramirez</h3>
                 <h4>Docente en desarrollo web</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis.</p>
+                <p>Apasionado de la enseñanza ha trabajado por 5 años en una reconocida empresa de desarrollo de software a la medida</p>
               </div>
             </div>
 
@@ -154,7 +152,7 @@
               <div class="texto">
                 <h3>María Castro</h3>
                 <h4>Docente Publicista</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis.</p>
+                <p>Apasionado de la enseñanza ha trabajado por 5 años en una reconocida empresa de desarrollo de software a la medida</p>
               </div>
             </div>
 
@@ -184,7 +182,7 @@
               </div>
               <div class="texto-info">
                 <h4>La <span class="color-title">enseñanza</span> es nuestra <span class="color-title">Arma</span></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, assumenda.</p>
+                <p>Somos una empresa dedicada a fortalecer las habilidades y competencias de todas las personas y empresas para dinamizar y potenciar su futuro y oportunidades</p>
               </div>
             </div>
 
@@ -194,7 +192,7 @@
               </div>
               <div class="texto-info">
                 <h4>Formamos</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, assumenda.</p>
+                <p>Buscamos lograr una capacidad de cocreacion y aprendizaje llevados de la mano para potenciar la capacidad y el talento de la region de latinoamerica</p>
               </div>
             </div>
 
@@ -202,7 +200,11 @@
           <div class="foto-inf-extra">
           </div>
         </div>
-      </section>
+   </section>
+
+        {{#if session}}
+        {{else}}
+   
       <section class="formulario-x" >
       <div class="row no-gutters bg-darks">
         <div class="col-xl-5 col-lg-12 register-bg">
@@ -251,21 +253,7 @@
         </div>
     </div>
 </section>
-
- <!-- Optional JavaScript -->
- <!-- jQuery first, then Popper.js, then Bootstrap JS -->
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{{/if}}
 
 
-
-
-        <section>
-        <!-- -------------- -->
-        <!-- Footer-->
-        {{!-- <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; LatinoamericaX 2022</p></div>
-        </footer> --}}
-        <!-- Bootstrap core JS-->
         
