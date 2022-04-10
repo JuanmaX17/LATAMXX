@@ -12539,6 +12539,23 @@ border-radius:0px !important;
   
 }
 
+@media (max-width: 682px){
+  .info-extra{
+    background: #191919;
+    padding: 130px 0;
+    height: 9% !important;
+    
+    
+  }
+  .texto-info > h4{
+    font-size: 2rem !important;
+    width: 80vw;;
+  }
+  .texto-info > p{
+    font-size: 0.7rem !important;
+    width: 80vw;;
+  }
+}
 
 .info-extra .contenedor .info .contenido-info:first-child{
   margin-bottom: 30px;
