@@ -118,7 +118,9 @@ export const prototipadoProductos = (req, res)=>{
 
 /* optimizacion de Productos  */
 export const optimizacionProductos = (req, res)=>{
-    res.render("optimizacionProductos");
+    var session = req.session.login;
+    var nombre = req.session.nombre; 
+    res.render("optimizacionProductos",{session,nombre,curso:"Optimizacion de productos"});
 }
 
 /* pensamiento digital */

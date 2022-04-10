@@ -5539,6 +5539,20 @@ border-radius:0px !important;
 
 }
 
+@media (max-width: 462px){
+  .responsive-content{
+  height: 700px;
+}
+  #reazon-beca{
+    width: 90% !important;
+  }
+  .text-beca-content{
+    text-align: start !important;
+  }
+}
+
+
+
 .modal-dialog {
   position: relative;
   width: auto;
@@ -12566,24 +12580,18 @@ border-radius:0px !important;
   border-radius: 20px;
 
 }
-@media (max-width: 1150px) {
-  .info-extra{
-    padding: 130px 100px;
-  }
-
-}
-@media (max-width: 700px) {
-  .info-extra{
-    padding: 130px 20px;
-    
-  }
+@media (max-width: 1244px) {
   .foto-inf-extra{
-    margin-top: 20px;
-    height: 8rem;
-    width: 80%;
+    display: none;
   }
 
 }
+
+
+
+
+
+
 .titulo-seccion{
   margin-bottom: 60px;
 }
@@ -13179,7 +13187,9 @@ border-radius:0px !important;
   }
  }
 
-
+#razon-beca{
+  width: 90% !important;
+}
 
  .label-beca{
    color: #000;
@@ -14071,4 +14081,43 @@ input::-webkit-inner-spin-button {
     color: #0dcaf0 !important;
     
   }
+}
+
+
+
+
+/* MODAL PAGOS */
+.logo-pago{
+  width: 80px;
+}
+
+@media (max-width: 500px){
+  .logo-pago{
+    width: 50px;
+  }
+}
+
+
+@media (max-width: 500px){
+  
+.font-size-modal-pagos{
+  font-size: 0.7rem;
+}
+}
+
+
+
+.center-btn-pago{
+  text-align: center !important;
+}
+
+.form-control-pago{
+  border: none !important;
+  border-bottom: 1px solid black !important;
+  padding: 2px;
+  
+}
+
+.form-control-sin{
+  border: none !important;
 }

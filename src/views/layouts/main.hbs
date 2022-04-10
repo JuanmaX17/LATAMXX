@@ -293,7 +293,7 @@
 <!-- Modal -->
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style="width: 100%">
+    <div class="modal-content responsive-content" style="width: 100%">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Solicitud de beca</h5>
         <h5 class="modal-title-curso" id="exampleModalLongTitle">Curso: {{curso}}</h5>
@@ -377,35 +377,35 @@
 <!-- MODAL DE PAGOS -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content ">
+        <div class="modal-content mt-5">
             <div class="modal-body">
                 <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
-                <div class="tabs mt-3">
+                <div class="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation"> <a class="nav-link active" id="visa-tab" data-toggle="tab" href="#visa" role="tab" aria-controls="visa" aria-selected="true"> <img src="https://i.imgur.com/sB4jftM.png" width="80"> </a> </li>
-                        <li class="nav-item" role="presentation"> <a class="nav-link" id="paypal-tab" data-toggle="tab" href="#paypal" role="tab" aria-controls="paypal" aria-selected="false"> <img src="https://i.imgur.com/yK7EDD1.png" width="80"> </a> </li>
+                        <li class="nav-item" role="presentation"> <a class="nav-link active" id="visa-tab" data-toggle="tab" href="#visa" role="tab" aria-controls="visa" aria-selected="true"> <img class="logo-pago" src="https://i.imgur.com/sB4jftM.png" > </a> </li>
+                        <li class="nav-item" role="presentation"> <a class="nav-link" id="paypal-tab" data-toggle="tab" href="#paypal" role="tab" aria-controls="paypal" aria-selected="false"> <img class="logo-pago" src="https://i.imgur.com/yK7EDD1.png" > </a> </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="visa" role="tabpanel" aria-labelledby="visa-tab">
-                            <div class="mt-4 mx-4">
+                            <div >
                                 <div class="text-center">
                                     <h5>Credit card</h5>
                                 </div>
-                                <div class="form mt-3">
-                                    <div class="inputbox"> <input type="text" name="name" class="form-control font-modal" required="required"> <span>Cardholder Name</span> </div>
-                                    <div class="inputbox"> <input type="text" name="name" min="1" max="999" class="form-control font-modal" required="required"> <span>Card Number</span> <i class="fa fa-eye"></i> </div>
-                                    <div class="d-flex flex-row">
-                                        <div class="inputbox"> <input type="text" name="name" min="1" max="999" class="form-control font-modal" required="required"> <span>Expiration Date</span> </div>
-                                        <div class="inputbox"> <input type="text" name="name" min="1" max="999" class="form-control font-modal" required="required"> <span>CVV</span> </div>
-                                    </div>
-                                    <div class="px-5 pay"> <button class="btn btn-success btn-block">Add card</button> </div>
+                                <div class="form mt-3 font-size-modal-pagos">
+                                    <div class="inputbox form-control-pago"> <input type="text" name="name" class="form-control-sin font-modal" required="required"> <span>Cardholder Name</span> </div>
+                                    <div class="inputbox form-control-pago"> <input type="text" name="name" min="1" max="999" class="form-control-sin font-modal" required="required"> <span>Card Number</span> <i class="fa fa-eye"></i> </div>
+                               
+                                        <div class="inputbox form-control-pago"> <input type="text" name="name" min="1" max="999" class="form-control-sin font-modal" required="required"> <span>Expiration Date</span> </div>
+                                        <div class="inputbox form-control-pago"> <input type="text" name="name" min="1" max="999" class="form-control-sin font-modal" required="required"> <span>CVV</span> </div>
+                                  
+                                    <div class="px-5 pay center-btn-pago"> <button class="btn btn-success btn-block ">Add card</button> </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="paypal" role="tabpanel" aria-labelledby="paypal-tab">
-                            <div class="px-5 mt-5">
-                                <div class="inputbox"> <input type="text" name="name" class="form-control font-modal" required="required"> <span>Paypal Email Address</span> </div>
-                                <div class="pay px-5"> <button class="btn btn-primary btn-block">Add paypal</button> </div>
+                        <div class="tab-pane fade mt-5" id="paypal" role="tabpanel" aria-labelledby="paypal-tab">
+                            <div class="font-size-modal-pagos">
+                                <div class="inputbox form-control-pago"> <input type="text" name="name" class="form-control-sin font-modal" required="required"> <span>Paypal Email Address</span> </div>
+                                <div class="pay px-5 center-btn-pago"> <button class="btn btn-primary btn-block">Add paypal</button> </div>
                             </div>
                         </div>
                     </div>
