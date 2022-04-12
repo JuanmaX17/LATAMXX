@@ -22,7 +22,9 @@ import {
     cursosNoHomologablesPersonas,
     cursosHomologablesEmpresas,
     cursosNoHomologablesEmpresas,
-    tutoriales
+    tutoriales,
+    aprendizDigital,
+    administracionEquipos
     
     
 /*     editTask,
@@ -74,6 +76,9 @@ router.get("/cursosHomologablesEmpresas",cursosHomologablesEmpresas)
 router.get("/cursosNoHomologablesEmpresas",cursosNoHomologablesEmpresas)
 
 router.get("/tutoriales",tutoriales)
+
+router.get("/aprendizDigital",aprendizDigital);
+router.get("/administracionEquipos",administracionEquipos);
 
 /* 
 router.get("/task/:id/edit",editTask)

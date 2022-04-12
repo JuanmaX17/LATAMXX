@@ -12,6 +12,7 @@
  */
  html{
    width: 100vw !important;
+   overflow-x: hidden !important;
  }
 :root {
   --bs-blue: #0d6efd;
@@ -5713,6 +5714,9 @@ border-radius:0px !important;
 }
 
 @media (max-width: 575.98px) {
+  .modal-content{
+    top: 50px !important;
+  }
   .modal-fullscreen-sm-down {
     width: 100vw;
     max-width: none;
@@ -14137,4 +14141,26 @@ input::-webkit-inner-spin-button {
 
 .form-control-sin{
   border: none !important;
+}
+.footer__link{
+  text-decoration: none;
+
+  font-weight: 500;
+}
+
+.footer_autor{
+  display: inline;
+}
+
+.footer__copy{
+  background-color: #000;
+}
+
+@media (max-width: 500px){
+  .footer__copy{
+    background-color: white;
+  }
+  .footer_autor{
+    color: black !important;
+  }
 }

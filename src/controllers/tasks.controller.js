@@ -1,31 +1,30 @@
 import {modeloUser,modeloBecas} from "../models/Task"
 import crypto from "crypto";
 import bcryptjs from "bcryptjs";
+import session from "express-session";
 
 
 
+/* RUTA DE INICIO */
 export const inicio = async(req,res)=>{
     const tasks = await modeloUser.find().lean();
     var session = req.session.login;
     var nombre = req.session.nombre; 
+   
 
     res.render("index",{session,nombre});
 
 }
 
 
-/* Curso de diseño al cliente */
-export const curso = (req, res)=>{
-    var session = req.session.login;
-    var nombre = req.session.nombre; 
-    res.render("designClient",{session,nombre,curso: "Diseño basado en el cliente"});
-}
 
-/* formulario de registro */
+
+/* FORMULARIO DE REGISTRO GET */
 export const registroGet = (req,res)=>{
     res.render("registro");
 }
-/* captar datos del formulario de registro */
+
+/* FORMULARIO DE REGISTRO POST */
  export const registroPost = async(req,res)=>{
     try{
         const task = modeloUser(req.body);
@@ -39,21 +38,29 @@ export const registroGet = (req,res)=>{
         res.render("login",{id: task._id,message: "Registro exitoso",registro: true});
     }catch(e){
         console.log("error",e)
+
+        /* Ejemplo de como hacer que al recargar no aparezcan los mensajes por si asi se desea */
+        req.session.errorRegistro = true
+        var errorRegistro = req.session.errorRegistro 
+        res.render("index",{errorRegistro})
+        
     }
 }
 
-/* formulario de login */
+/* FORMULARIO GET */
 export const loginVista = (req,res)=>{
     res.render("login");
 }
 
-/* Logout */
+/* LOGOUT */
 export const logout = (req,res)=>{
     delete req.session.login;
     delete req.session.nombre;
     res.redirect("/");
 }
-/* captar formulario de login e iniciar sesion */
+
+
+/* FORMULARIO DE INICIO DE SESSION POST*/
 export const login = async(req,res)=>{
     
     try{
@@ -81,7 +88,7 @@ export const login = async(req,res)=>{
 
    
         }else{
-            console.log("contra o pass incorrectos");
+            console.log("contra o password incorrectos");
             var sesion = false;
 
             res.render("login",{messageUser: "el usuario no existe",session});
@@ -93,51 +100,6 @@ export const login = async(req,res)=>{
     }
 }
 
-
-
-
-
-
-/* viaje en linea */
-export const viajeEnLinea = (req, res)=>{
-    var session = req.session.login;
-    var nombre = req.session.nombre; 
-    res.render("viajeEnLinea",{session,nombre,curso:"Viaje en Linea"});
-}
-
-
-/* Prototipado productos */
-export const prototipadoProductos = (req, res)=>{
-    var session = req.session.login;
-    var nombre = req.session.nombre; 
-    res.render("prototipadoProductos",{session,nombre,curso:"Prototipado de productos"});
-}
-
-
-
-
-/* optimizacion de Productos  */
-export const optimizacionProductos = (req, res)=>{
-    var session = req.session.login;
-    var nombre = req.session.nombre; 
-    res.render("optimizacionProductos",{session,nombre,curso:"Optimizacion de productos"});
-}
-
-/* pensamiento digital */
-export const pensamientoDigital = (req, res)=>{
-    var session = req.session.login;
-    var nombre = req.session.nombre; 
-    res.render("pensamientoDigital",{session,nombre,curso:"Pensamiento Digital"});
-}
-
-
-
-/* habilidades */
-export const habilidades = (req, res)=>{
-    var session = req.session.login;
-    var nombre = req.session.nombre; 
-    res.render("habilidades",{curso: "Habilidades digitales",session,nombre,curso:"Habilidades digitales"});
-}
 
 
 
@@ -179,6 +141,8 @@ export const beca = async(req,res)=>{
 
 }
 
+
+/* CATEGORIAS DE CURSOS HOMOLOGABLES PERSONAS Y EMRPESAS */
 export const cursosHomologablesPersonas = async(req,res)=>{
     var session = req.session.login;
     var nombre = req.session.nombre;
@@ -208,11 +172,95 @@ export const cursosNoHomologablesEmpresas = async(req,res)=>{
 }
 
 export const tutoriales = (req,res)=>{
+    var session = req.session.login;
+    var nombre = req.session.nombre;
 
-    res.render("tutoriales");
+    res.render("tutoriales",{session,nombre});
+}
+/* ------------------------------------------------------ */
+
+
+
+/* ---------------TODA LA SECCION DE CURSOS -------------*/
+
+
+
+/* viaje en linea */
+export const viajeEnLinea = (req, res)=>{
+    var session = req.session.login;
+    var nombre = req.session.nombre; 
+    res.render("viajeEnLinea",{session,nombre,curso:"Viaje en Linea"});
+}
+
+/* Prototipado productos */
+export const prototipadoProductos = (req, res)=>{
+    var session = req.session.login;
+    var nombre = req.session.nombre; 
+    res.render("prototipadoProductos",{session,nombre,curso:"Prototipado de productos"});
+}
+
+/* optimizacion de Productos  */
+export const optimizacionProductos = (req, res)=>{
+    var session = req.session.login;
+    var nombre = req.session.nombre; 
+    res.render("optimizacionProductos",{session,nombre,curso:"Optimizacion de productos"});
+}
+
+/* pensamiento digital */
+export const pensamientoDigital = (req, res)=>{
+    var session = req.session.login;
+    var nombre = req.session.nombre; 
+    res.render("pensamientoDigital",{session,nombre,curso:"Pensamiento Digital"});
 }
 
 
+/* habilidades */
+export const habilidades = (req, res)=>{
+    var session = req.session.login;
+    var nombre = req.session.nombre; 
+    res.render("habilidades",{session,nombre,curso:"Habilidades digitales"});
+}
+
+/* Se un aprendiz digital */
+export const aprendizDigital = (req, res)=>{
+    var session = req.session.login;
+    var nombre = req.session.nombre; 
+    res.render("aprendizDigital",{session,nombre,curso:"Se un Aprendiz Digital"});
+}
+
+/* Bases de adminsitracion de equipos */
+
+export const administracionEquipos = (req, res)=>{
+    var session = req.session.login;
+    var nombre = req.session.nombre; 
+    res.render("administracionEquipos",{session,nombre,curso:"administracion de Equipos"});
+}
+
+/* Curso de diseño al cliente */
+export const curso = (req, res)=>{
+    var session = req.session.login;
+    var nombre = req.session.nombre; 
+    res.render("designClient",{session,nombre,curso: "Diseño basado en el cliente"});
+}
+
+/* La idea sabiendo que ustedes ya tienen categirzados sus crusos es solo que copien y peguen uno de ejemplo y reemplazen la informacion */
+/* session indica que la sesion se mantiene en cada renderizado igual q el nombre, el curso es para identificar los pagos y las solicitudes de beca, es decir de que curso se solicitan y hacen */
+/* tambien si quieren mas orden pueden crear una carpeta para cursos y solo cambiar las rutas */
+/* es importante tras crear el render CREAR LA RUTA y eso seria todo, solo es reemplazar */
+
+/* ----------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/* El codigo aqui abajo comentado no les va a funcionar, pero les servira de guia para funcionalidades extras de un tipico CRUD */
 /* 
 export const editTask = async(req,res)=>{
     const id = req.params.id;
@@ -232,9 +280,9 @@ export const updateTask = async(req,res)=>{
         const taskUpdate = await modeloUser.findByIdAndUpdate(id,req.body).lean()
         console.log("---",taskUpdate)
         if(taskUpdate._id == id){
-            console.log("Tarea actualizada correctamente");
+            console.log("usuario actualizado correctamente");
         }else{
-            console.log("Tarea no encontrada")
+            console.log("usuario no encontrada")
         }
         
         res.json({
@@ -254,7 +302,7 @@ export const deleteTask = async(req, res)=>{
     const id = req.params.id
     try{
         const taskDelete = await modeloUser.findByIdAndDelete(id)
-        console.log("Tarea eliminada")
+        console.log("usuario eliminado")
         res.json({
             estado: true
         })
@@ -272,7 +320,7 @@ export const toggleTask = async(req, res)=>{
     const id = req.params.id;
     const task = await modeloUser.findById(id);
     console.log(task);
-    task.done = !task.done;
+
 
     await task.save()
     res.redirect("/");
